@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>To-Do List</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container"></div>
+    <div class="todo-app">
+      <div class="foldpin-holder">
+        <img src="/images/foldback.png" alt="" class="foldpin" />
+      </div>
+      <div class="heading">
+        <img src="/images/pencil.png" alt="images" />
+        <h2>TO-DO LIST</h2>
+        <img src="/images/pencil.png" alt="images" />
+      </div>
+      <div class="row">
+        <input type="text" id="search-box" placeholder="Enter task" />
+        <select id="categorySelect">
+          <option value="basic">Basic</option>
+          <option value="urgent">Urgent</option>
+        </select>
+        <button onclick="addPlan()"><i class="fa-solid fa-plus"></i></button>
+      </div>
+
+      <ul id="list-container"></ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

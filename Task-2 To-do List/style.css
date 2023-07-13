@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+    background: url("/images/todo-bacgd2.jpg");
+    filter: blur(5px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.foldpin {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 11rem;
+    top: -80px;
+
+}
+
+.todo-app {
+    position: absolute;
+    top: 12%;
+    left: 30%;
+    width: 100%;
+    max-width: 540px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    border-left: 2px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 2;
+
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+h2 {
+    margin-top: 0px;
+    color: #f4f3f3;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-left: 5px;
+}
+
+img {
+    margin-left: 30px;
+    display: flex;
+    width: 50px;
+    height: 70px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(229, 202, 202);
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-weight: 14px;
+    font: 1em sans-serif;
+}
+
+input::placeholder {
+    color: #002765;
+    opacity: 2;
+}
+
+.urgent {
+    font-weight: bold;
+    position: relative;
+}
+
+#categorySelect {
+    margin-top: 2px;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    margin-left: 2px;
+    margin-right: 2px;
+    background: #ff5954;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 500px;
+    box-shadow: 20px 20px 50px rgba(250, 249, 249, 0.5);
+    border-bottom: solid rgb(252, 249, 249);
+
+}
+
+/* Styling for the options */
+#categorySelect option {
+    padding: 5px;
+    font-size: 14px;
+    background-color: white;
+    color: black;
+}
+
+#categorySelect option:hover {
+    background-color: #d55e46;
+}
+
+
+button {
+    position: relative;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    margin-left: 2px;
+    margin-right: 2px;
+    background: #6587d4;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 500px;
+    box-shadow: 20px 20px 50px rgba(250, 249, 249, 0.5);
+    border-bottom: solid rgb(252, 249, 249);
+}
+
+
+button:hover {
+    background-color: #54abda;
+}
+
+#list-container {
+    max-height: 450px;
+    overflow-y: auto;
+}
+
+#list-container::-webkit-scrollbar {
+    width: 12px;
+    /* Set the width of the scrollbar */
+
+}
+
+#list-container::-webkit-scrollbar-track {
+    background: #fffefe;
+    /* Set the background color of the scrollbar track */
+    padding-right: 10px;
+}
+
+#list-container::-webkit-scrollbar-thumb {
+    background: #f86666;
+    /* Set the color of the scrollbar thumb */
+    border-radius: 0px;
+
+    /* Set the border radius of the scrollbar thumb */
+}
+
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 24px;
+    border-radius: 50%;
+    background-image: url(/images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    left: 8px;
+    top: 12px;
+    border: 2px solid rgb(95, 87, 87);
+}
+
+ul li.checked {
+    color: #3a3535;
+    text-decoration: line-through;
+}
+
+
+.bell-icon {
+    color: red;
+    font-size: 20px;
+    margin-right: 5px;
+    position: absolute;
+    left: 380px;
+    animation: shakeAnimation 0.5s infinite;
+}
+
+@keyframes shakeAnimation {
+    0% {
+        transform: translateX(-2px) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateX(2px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateX(-2px) rotate(-5deg);
+    }
+}
+
+ul li.checked::before {
+    background-image: url(/images/checked.png);
+    border: 2px solid rgb(235, 55, 55);
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 35px;
+    height: 35px;
+    font-size: 25px;
+    color: #252525;
+    line-height: 40px;
+    text-align: center;
+    border: 2px solid black;
+    border: none;
+    background: rgb(229, 202, 202);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+ul li span:hover {
+    background-color: #ff5954;
+    border-radius: 50%;
+    color: #fff;
+}
